@@ -1,0 +1,89 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Validator;
+
+use Alert;
+
+class {{ class }} extends Controller
+{
+    protected $Service;
+
+	public function __construct()
+	{
+		$this->Service = '';
+	}
+
+	public function index(Request $request)
+    {
+    	return view('contents.users.index', get_defined_vars());
+    }
+
+    public function create()
+    {    	
+    	return view('contents.users.create', get_defined_vars());
+    }
+
+    public function edit($id)
+    {
+    	return view('contents.users.edit', get_defined_vars());
+    }
+
+    public function store(Request $request)
+    {
+    	$validator = Validator::make($request->all(), [
+
+		]);
+
+		if ($validator->fails()) {
+        	Alert::error('Error', $validator->errors()->first());
+
+			return redirect()->back();
+        }
+
+    	try {
+    		
+    	} catch (Exception $ex) {
+    		
+    	}
+
+    	return redirect()->route('a');
+    }
+
+    public function update(Request $request, $id)
+    {
+
+    	$validator = Validator::make($request->all(), [
+
+		]);
+
+		if ($validator->fails()) {
+        	Alert::error('Error', $validator->errors()->first());
+
+			return redirect()->back();
+        }
+
+    	try {
+    		
+    	} catch (Exception $ex) {
+    		
+    	}
+
+    	return redirect()->route('a');
+    }
+
+    public function destroy($id)
+    {
+    	try {
+    		
+    	} catch (Exception $ex) {
+    		
+    	}
+
+    	return redirect()->back();
+    }
+}
